@@ -1,0 +1,46 @@
+[
+  {
+    "id": 1,
+    "name": "Jane Smith",
+    "avatar": "https://i.pravatar.cc/150?img=5",
+    "stack": "React",
+    "location": "Barcelona",
+    "availability": true,
+    "skills": ["JavaScript", "React", "CSS"],
+    "level": "junior",
+    "workSituation": "Looking for work"
+  },
+  {
+    "id": 2,
+    "name": "John Doe",
+    "avatar": "https://i.pravatar.cc/150?img=12",
+    "stack": "Node.js",
+    "location": "Madrid",
+    "availability": false,
+    "skills": ["Node.js", "TypeScript", "SQL"],
+    "level": "mid",
+    "workSituation": "Employed"
+  },
+  {
+    "id": 3,
+    "name": "Alice Johnson",
+    "avatar": "https://i.pravatar.cc/150?img=9",
+    "stack": "Angular",
+    "location": "Remote",
+    "availability": true,
+    "skills": ["Angular", "RxJS", "HTML"],
+    "level": "senior",
+    "workSituation": "Freelance"
+  },
+  {
+    "id": 4,
+    "name": "David Brown",
+    "avatar": "https://i.pravatar.cc/150?img=15",
+    "stack": "Python",
+    "location": "Valencia",
+    "availability": true,
+    "skills": ["Python", "Django"],
+    "level": "junior",
+    "workSituation": "Looking for work"
+  }
+]

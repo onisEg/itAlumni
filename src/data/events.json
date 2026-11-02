@@ -1,0 +1,26 @@
+[
+  {
+    "id": 1,
+    "title": "React Barcelona Meetup",
+    "date": "2026-11-20",
+    "time": "18:00",
+    "description": "A community meetup about the latest in React.",
+    "type": "talk"
+  },
+  {
+    "id": 2,
+    "title": "TypeScript Workshop",
+    "date": "2026-11-25",
+    "time": "10:00",
+    "description": "Hands-on workshop to master TypeScript.",
+    "type": "workshop"
+  },
+  {
+    "id": 3,
+    "title": "Career Day: Tech Jobs",
+    "date": "2026-12-02",
+    "time": "16:00",
+    "description": "Meet companies hiring junior developers.",
+    "type": "talk"
+  }
+]

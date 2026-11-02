@@ -1,0 +1,38 @@
+[
+  {
+    "id": 1,
+    "title": "Software Engineer",
+    "company": "TechCorp",
+    "location": "Barcelona",
+    "contractType": "Full-time",
+    "stack": "React",
+    "applyUrl": "https://example.com/apply/1"
+  },
+  {
+    "id": 2,
+    "title": "Product Manager",
+    "company": "InnovateX",
+    "location": "Remote",
+    "contractType": "Full-time",
+    "stack": "—",
+    "applyUrl": "https://example.com/apply/2"
+  },
+  {
+    "id": 3,
+    "title": "Data Analyst",
+    "company": "DataWorks",
+    "location": "Madrid",
+    "contractType": "Part-time",
+    "stack": "Python",
+    "applyUrl": "https://example.com/apply/3"
+  },
+  {
+    "id": 4,
+    "title": "UX Designer",
+    "company": "DesignHub",
+    "location": "Valencia",
+    "contractType": "Contract",
+    "stack": "Figma",
+    "applyUrl": "https://example.com/apply/4"
+  }
+]
