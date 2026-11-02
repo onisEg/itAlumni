@@ -1,12 +1,19 @@
 import './style.css'
 
-import { setupCounter } from './counter.ts'
+import { renderAlumniView } from './views/alumniView.ts'
 
 document.querySelector<HTMLDivElement>('#app')!.innerHTML = `
 
- <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
- 
- </div>
+   <header class="border-b border-border">
+    <div class="max-w-5xl mx-auto px-4 py-4 flex items-center justify-between">
+      <h1 class="text-xl font-bold text-primary">ITAlumni</h1>
+      <nav class="text-sm"><a href="#" class="text-primary font-semibold">Networking</a></nav>
+    </div>
+  </header>
+  <main class="max-w-5xl mx-auto px-4 py-6">
+    <h2 class="text-lg font-semibold text-ink mb-4">Alumni Network</h2>
+    <div id="alumni-view"></div>
+  </main>
 `
 
-setupCounter(document.querySelector<HTMLButtonElement>('#counter')!)
+renderAlumniView(document.querySelector<HTMLButtonElement>('#alumni-view')!)    
