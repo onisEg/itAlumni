@@ -1,7 +1,7 @@
 import jobCard from "../components/jobCard";
 import { getJobs } from "../services/jobService";
 
-export async function renderJobView(container: HTMLElement): Promise<viod> {
+export async function renderJobView(container: HTMLElement): Promise<void> {
     container.innerHTML = `<p class="text-center text-muted py-10">Loading</p>`;
     try {
         const jobs = await getJobs();

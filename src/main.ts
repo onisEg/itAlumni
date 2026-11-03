@@ -1,16 +1,22 @@
 import './style.css'
 
 import { renderAlumniView } from './views/alumniView.ts'
+import { renderEventView } from './views/eventView.ts';
 import { renderJobView } from './views/jobView.ts'
 
-document.querySelector<HTMLDivElement>('#app')!.innerHTML = `
+// The app's root element (the empty <div id="app"> in index.html)
+const app = document.querySelector<HTMLDivElement>('#app')!;
 
+// Build the shell once: header + nav + an empty content area (#content)
+app.innerHTML = `
    <header class="border-b border-border">
     <div class="max-w-5xl mx-auto px-4 py-4 flex items-center justify-between">
-      <h1 class="text-xl font-bold text-primary">ITAlumni</h1>
+    
+      <a ><img class="w-full" src="./src/assets/Logo.svg" alt=""></a>
      <nav class="flex gap-4 text-sm font-medium">
         <button data-route="alumni" class="nav-link">Networking</button>
         <button data-route="jobs" class="nav-link">Jobs</button>
+        <button data-route="events" class="nav-link">Events</button>
       </nav>
     </div>
   </header>
@@ -19,13 +25,17 @@ document.querySelector<HTMLDivElement>('#app')!.innerHTML = `
     <div id="content"></div>
   </main>
 `
+
+// Grab the two spots we update on navigation: the title and the content box
 const content = document.querySelector<HTMLButtonElement>("#content")!;
 const title = document.querySelector<HTMLHeadElement>("#page-title")!;
 
+
+// Route table: maps each page name to its title + the function that draws it
 const routes = {
     alumni: { title: "Alumni Network", render: renderAlumniView },
     jobs: { title: "Job Opportunities", render: renderJobView },
-
+    events: { title: "Events & Activities", render: renderEventView },
 }
 
 
