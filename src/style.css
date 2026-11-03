@@ -19,3 +19,8 @@
   --font-sans: "Source Sans 3", sans-serif;
   --font-mono: "Source Code Pro", monospace;
 }
+
+body {
+  font-family: var(--font-sans);
+  color: var(--color-slate);
+}
