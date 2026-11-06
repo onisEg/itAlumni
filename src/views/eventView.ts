@@ -1,4 +1,5 @@
 import { eventCard } from "../components/eventCard";
+import { searchBar } from "../components/searchBar";
 import { getEvents } from "../services/eventService";
 
 // Render the events view into the given container, handling every UI state
@@ -14,9 +15,10 @@ export async function renderEventView(container: HTMLElement): Promise<void> {
         }
         // 3) Success: cards
         container.innerHTML = `
-      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
-        ${events.map(eventCard).join("")}
-      </div>`;
+            ${searchBar("Search Events...")}
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+                ${events.map(eventCard).join("")}
+            </div>`;
     } catch {
         // 4) Error 
         container.innerHTML = `<p class="text-center text-red-600 py-10">Something went wrong. Please try again.</p>`;

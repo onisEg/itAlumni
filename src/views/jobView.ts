@@ -1,4 +1,5 @@
 import jobCard from "../components/jobCard";
+import { searchBar } from "../components/searchBar";
 import { getJobs } from "../services/jobService";
 
 export async function renderJobView(container: HTMLElement): Promise<void> {
@@ -10,11 +11,12 @@ export async function renderJobView(container: HTMLElement): Promise<void> {
             return;
         }
         container.innerHTML = `
-      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
-        ${jobs.map(jobCard).join("")}
-      </div>`;
+            ${searchBar("Search Jobs...")}
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+                ${jobs.map(jobCard).join("")}
+            </div>`;
     } catch {
         container.innerHTML = `<p class="text-center text-red-600 py-10">Something went wrong. Please try again.</p>`;
     }
-    
+
 }
