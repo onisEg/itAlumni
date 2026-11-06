@@ -13,5 +13,9 @@
     "tailwindcss": "^4.3.4",
     "typescript": "~7.0.2",
     "vite": "^8.3.5"
+  },
+  "dependencies": {
+    "lucide": "^1.69.0",
+    "lucide-react": "^1.69.0"
   }
 }

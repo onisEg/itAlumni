@@ -1,19 +1,19 @@
 @import "tailwindcss";
 
-
-:root {
+@theme {
   /* ── Brand ──*/
-  --color-primary: #ce0a86;          
-  --color-gradient: linear-gradient(to right, #873aaa, #df007f);    
+  --color-primary: #ce0a86;
+  --color-gradient: linear-gradient(to right, #873aaa, #df007f);
 
   /* ── Text colors ────────────────────── */
-  --color-ink: #171a1f;     
-  --color-slate: #565e6c;     
-  --color-muted: #9095a0;            
+  --color-ink: #171a1f;
+  --color-slate: #565e6c;
+  --color-muted: #9095a0;
 
   /* ── UI ── */
-  --color-border: #bcc1ca;           
-  --color-star: #F3C63F;             
+  --color-border: #bcc1ca;
+  --color-border-light: #eaeaea;
+  --color-star: #f3c63f;
 
   /* ── Fonts ── */
   --font-sans: "Source Sans 3", sans-serif;
@@ -23,4 +23,11 @@
 body {
   font-family: var(--font-sans);
   color: var(--color-slate);
+}
+
+button {
+  cursor: pointer;
+  &:hover {
+    transition: all 1s;
+  }
 }
