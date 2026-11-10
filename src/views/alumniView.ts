@@ -1,4 +1,5 @@
 import { alumniCard } from "../components/alumniCard";
+import { renderFooter } from "../components/footer";
 import { searchBar } from "../components/searchBar";
 import { getAlmni } from "../services/alumniService";
 
@@ -16,7 +17,10 @@ export async function renderAlumniView(container: HTMLElement): Promise<void> {
             ${searchBar("Search alumni...")}
             <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
                 ${alumni.map(alumniCard).join("")}
-            </div>`
+            </div>
+            ${renderFooter()}
+            `
+        
     } catch {
         container.innerHTML = `<p class="text-center text-red-600 py-10"> Something went wrong, Please try again </p>`
     }
