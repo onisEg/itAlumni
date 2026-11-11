@@ -3,11 +3,17 @@ import './style.css'
 import { renderAlumniView } from './views/alumniView.ts'
 import { renderEventView } from './views/eventView.ts';
 import { renderJobView } from './views/jobView.ts'
-import { renderHomeView } from './views/homeView.ts';
 import { renderProfileView } from './views/profileView.ts';
 import { renderRegisterView } from './views/renderRegisterView.ts';
 import { renderHeader } from './components/header.ts';
 import { renderBottomNav } from './components/bottomNav.ts';
+import { renderHomeView } from './views/homeView.ts';
+
+
+
+
+
+
 
 // The app's root element (the empty <div id="app"> in index.html)
 const app = document.querySelector<HTMLDivElement>('#app')!;
@@ -38,8 +44,6 @@ const routes = {
   profile: { title: "", render: renderProfileView },
   register: { title: "", render: renderRegisterView },
 }
-
-
 
 function navigate(route: keyof typeof routes) {
   if (!routes[route]) return;
