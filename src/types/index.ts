@@ -1,3 +1,5 @@
+import type { FilterState } from "../components/filterBar";
+
 export type Level = "junior" | "mid" | "senior";
 
 export interface Alumni {
@@ -35,4 +37,24 @@ export interface User {
     name: string;
     email: string;
     avatar?: string;
+}
+
+export interface AlumniFilters {
+    query: string;
+    stack: string;
+    level: string;
+    availability: string;
+}
+
+// Description of a single dropdown
+export interface FilterConfig {
+    key: string;       
+    label: string;      
+    options: string[];  
+}
+
+export interface FilterBarOptions {
+    searchPlaceholder: string;
+    filters: FilterConfig[];
+    onChange: (state: FilterState) => void; // It aligns with any change
 }

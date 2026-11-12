@@ -1,38 +1,92 @@
 [
   {
     "id": 1,
-    "title": "Software Engineer",
-    "company": "TechCorp",
+    "title": "Frontend Developer",
+    "company": "TechNova",
     "location": "Barcelona",
     "contractType": "Full-time",
-    "stack": "React",
-    "applyUrl": "https://example.com/apply/1"
+    "stack": "Frontend",
+    "applyUrl": "#"
   },
   {
     "id": 2,
-    "title": "Product Manager",
-    "company": "InnovateX",
-    "location": "Remote",
+    "title": "Backend Engineer",
+    "company": "DataForge",
+    "location": "Madrid",
     "contractType": "Full-time",
-    "stack": "—",
-    "applyUrl": "https://example.com/apply/2"
+    "stack": "Backend",
+    "applyUrl": "#"
   },
   {
     "id": 3,
-    "title": "Data Analyst",
-    "company": "DataWorks",
-    "location": "Madrid",
-    "contractType": "Part-time",
-    "stack": "Python",
-    "applyUrl": "https://example.com/apply/3"
+    "title": "Fullstack Developer",
+    "company": "Nimbus",
+    "location": "Remote",
+    "contractType": "Contract",
+    "stack": "Fullstack",
+    "applyUrl": "#"
   },
   {
     "id": 4,
-    "title": "UX Designer",
-    "company": "DesignHub",
+    "title": "iOS Mobile Developer",
+    "company": "AppWorks",
+    "location": "Barcelona",
+    "contractType": "Full-time",
+    "stack": "Mobile",
+    "applyUrl": "#"
+  },
+  {
+    "id": 5,
+    "title": "DevOps Engineer",
+    "company": "CloudPeak",
     "location": "Valencia",
+    "contractType": "Full-time",
+    "stack": "DevOps",
+    "applyUrl": "#"
+  },
+  {
+    "id": 6,
+    "title": "Junior Data Analyst",
+    "company": "InsightLab",
+    "location": "Barcelona",
+    "contractType": "Internship",
+    "stack": "Data",
+    "applyUrl": "#"
+  },
+  {
+    "id": 7,
+    "title": "React Developer",
+    "company": "Pixelup",
+    "location": "Badalona",
+    "contractType": "Part-time",
+    "stack": "Frontend",
+    "applyUrl": "#"
+  },
+  {
+    "id": 8,
+    "title": "Node.js Backend Developer",
+    "company": "ServerSide",
+    "location": "Remote",
+    "contractType": "Full-time",
+    "stack": "Backend",
+    "applyUrl": "#"
+  },
+  {
+    "id": 9,
+    "title": "Frontend Engineer (UX)",
+    "company": "BrightUI",
+    "location": "Madrid",
+    "contractType": "Full-time",
+    "stack": "Frontend",
+    "applyUrl": "#"
+  },
+  {
+    "id": 10,
+    "title": "Flutter Developer",
+    "company": "MobliQ",
+    "location": "Barcelona",
     "contractType": "Contract",
-    "stack": "Figma",
-    "applyUrl": "https://example.com/apply/4"
+    "stack": "Mobile",
+    "applyUrl": "#"
   }
 ]

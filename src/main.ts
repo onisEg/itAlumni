@@ -10,11 +10,6 @@ import { renderBottomNav } from './components/bottomNav.ts';
 import { renderHomeView } from './views/homeView.ts';
 
 
-
-
-
-
-
 // The app's root element (the empty <div id="app"> in index.html)
 const app = document.querySelector<HTMLDivElement>('#app')!;
 

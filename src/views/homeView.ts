@@ -3,6 +3,7 @@ import { renderFooter } from "../components/footer";
 import testimonials from "../components/testimonials";
 import { icon } from "../utils/icon";
 import { GraduationCap, MessagesSquare, UserPlus, Play } from "lucide";
+import heroImg from "../assets/heroImg.jpg"
 
 // Home / landing view (static content — no data fetch)
 export function renderHomeView(container: HTMLElement): void {
@@ -25,7 +26,7 @@ export function renderHomeView(container: HTMLElement): void {
       </div>
       <!-- Hero image + play overlay. Replace the src with your own image in public/ -->
       <div class="relative w-full max-w-3xl mt-4">
-        <img src="https://picsum.photos/seed/alumni/900/460" alt="Alumni community" class="w-full rounded-2xl object-cover" />
+        <img src="${heroImg}" alt="Alumni community" class="w-full rounded-2xl object-cover" />        
         <button class="absolute inset-0 m-auto w-14 h-14 bg-white/90 rounded-full flex items-center justify-center text-ink shadow-lg" aria-label="Play video">
           ${icon(Play, "w-6 h-6")}
         </button>
