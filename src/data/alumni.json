@@ -2,45 +2,133 @@
   {
     "id": 1,
     "name": "Jane Smith",
-    "avatar": "https://i.pravatar.cc/150?img=5",
-    "stack": "React",
+    "avatar": "https://i.pravatar.cc/150?img=1",
+    "stack": "Frontend",
     "location": "Barcelona",
     "availability": true,
-    "skills": ["JavaScript", "React", "CSS"],
-    "level": "junior",
-    "workSituation": "Looking for work"
+    "skills": ["React", "TypeScript", "Tailwind"],
+    "level": "mid",
+    "workSituation": "Open to work"
   },
   {
     "id": 2,
     "name": "John Doe",
     "avatar": "https://i.pravatar.cc/150?img=12",
-    "stack": "Node.js",
+    "stack": "Backend",
     "location": "Madrid",
     "availability": false,
-    "skills": ["Node.js", "TypeScript", "SQL"],
-    "level": "mid",
+    "skills": ["Node.js", "Express", "PostgreSQL"],
+    "level": "senior",
     "workSituation": "Employed"
   },
   {
     "id": 3,
     "name": "Alice Johnson",
-    "avatar": "https://i.pravatar.cc/150?img=9",
-    "stack": "Angular",
-    "location": "Remote",
+    "avatar": "https://i.pravatar.cc/150?img=5",
+    "stack": "Fullstack",
+    "location": "Badalona",
     "availability": true,
-    "skills": ["Angular", "RxJS", "HTML"],
-    "level": "senior",
-    "workSituation": "Freelance"
+    "skills": ["React", "Node.js", "MongoDB"],
+    "level": "junior",
+    "workSituation": "Open to work"
   },
   {
     "id": 4,
     "name": "David Brown",
     "avatar": "https://i.pravatar.cc/150?img=15",
-    "stack": "Python",
+    "stack": "DevOps",
     "location": "Valencia",
+    "availability": false,
+    "skills": ["Docker", "Kubernetes", "AWS"],
+    "level": "senior",
+    "workSituation": "Employed"
+  },
+  {
+    "id": 5,
+    "name": "Laia Puig",
+    "avatar": "https://i.pravatar.cc/150?img=9",
+    "stack": "Mobile",
+    "location": "Barcelona",
     "availability": true,
-    "skills": ["Python", "Django"],
+    "skills": ["Flutter", "Dart", "Firebase"],
+    "level": "mid",
+    "workSituation": "Freelance"
+  },
+  {
+    "id": 6,
+    "name": "Marc Vidal",
+    "avatar": "https://i.pravatar.cc/150?img=33",
+    "stack": "Data",
+    "location": "Girona",
+    "availability": true,
+    "skills": ["Python", "Pandas", "SQL"],
     "level": "junior",
-    "workSituation": "Looking for work"
+    "workSituation": "Studying"
+  },
+  {
+    "id": 7,
+    "name": "Emma García",
+    "avatar": "https://i.pravatar.cc/150?img=20",
+    "stack": "Frontend",
+    "location": "Barcelona",
+    "availability": false,
+    "skills": ["Vue", "JavaScript", "CSS"],
+    "level": "senior",
+    "workSituation": "Employed"
+  },
+  {
+    "id": 8,
+    "name": "Omar Haddad",
+    "avatar": "https://i.pravatar.cc/150?img=52",
+    "stack": "Backend",
+    "location": "Badalona",
+    "availability": true,
+    "skills": ["Java", "Spring", "MySQL"],
+    "level": "mid",
+    "workSituation": "Open to work"
+  },
+  {
+    "id": 9,
+    "name": "Sara López",
+    "avatar": "https://i.pravatar.cc/150?img=24",
+    "stack": "Fullstack",
+    "location": "Madrid",
+    "availability": true,
+    "skills": ["Angular", "NestJS", "TypeScript"],
+    "level": "senior",
+    "workSituation": "Freelance"
+  },
+  {
+    "id": 10,
+    "name": "Youssef Amin",
+    "avatar": "https://i.pravatar.cc/150?img=56",
+    "stack": "DevOps",
+    "location": "Barcelona",
+    "availability": false,
+    "skills": ["Terraform", "AWS", "CI/CD"],
+    "level": "mid",
+    "workSituation": "Employed"
+  },
+  {
+    "id": 11,
+    "name": "Nora Khaled",
+    "avatar": "https://i.pravatar.cc/150?img=47",
+    "stack": "Data",
+    "location": "Barcelona",
+    "availability": true,
+    "skills": ["Python", "TensorFlow", "SQL"],
+    "level": "senior",
+    "workSituation": "Open to work"
+  },
+  {
+    "id": 12,
+    "name": "Pau Serra",
+    "avatar": "https://i.pravatar.cc/150?img=68",
+    "stack": "Mobile",
+    "location": "Sabadell",
+    "availability": true,
+    "skills": ["Swift", "iOS", "Kotlin"],
+    "level": "junior",
+    "workSituation": "Studying"
   }
 ]
