@@ -26,8 +26,8 @@ app.innerHTML = `
 `
 
 // Grab the two spots we update on navigation: the title and the content box
-const content = document.querySelector<HTMLButtonElement>("#content")!;
-const title = document.querySelector<HTMLHeadElement>("#page-title")!;
+const content = document.querySelector<HTMLDivElement>("#content")!;
+const title = document.querySelector<HTMLHeadingElement>("#page-title")!;
 
 
 // Route table: maps each page name to its title + the function that draws it

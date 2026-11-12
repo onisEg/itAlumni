@@ -39,14 +39,7 @@ export interface User {
     avatar?: string;
 }
 
-export interface AlumniFilters {
-    query: string;
-    stack: string;
-    level: string;
-    availability: string;
-}
-
-// Description of a single dropdown
+// Description dropdown
 export interface FilterConfig {
     key: string;       
     label: string;      

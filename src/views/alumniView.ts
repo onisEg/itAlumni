@@ -1,6 +1,6 @@
 import { alumniCard } from "../components/alumniCard";
 import { renderFooter } from "../components/footer";
-import { getAlmni } from "../services/alumniService";
+import { getAlumni } from "../services/alumniService";
 import { filterAlumni } from "../utils/filterAlumni";
 import { uniqueValues } from "../utils/uniqueValues";
 import type { Alumni } from "../types";
@@ -12,7 +12,7 @@ export async function renderAlumniView(container: HTMLElement): Promise<void> {
     //loading
     let alumniList: Alumni[];
     try {
-        alumniList = await getAlmni();
+        alumniList = await getAlumni();
     } catch {
         //getting data fail
         container.innerHTML = `<p class="text-center text-red-600 py-10">Something went wrong. Please try again.</p>`;
