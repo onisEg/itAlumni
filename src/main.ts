@@ -1,60 +1,67 @@
+
 import './style.css'
-import heroImg from './assets/hero.png'
-import typescriptLogo from './assets/typescript.svg'
-import viteLogo from './assets/vite.svg'
-import { setupCounter } from './counter.ts'
+import { renderAlumniView } from './views/alumniView.ts'
+import { renderEventView } from './views/eventView.ts';
+import { renderJobView } from './views/jobView.ts'
+import { renderProfileView } from './views/profileView.ts';
+import { renderRegisterView } from './views/renderRegisterView.ts';
+import { renderHeader } from './components/header.ts';
+import { renderBottomNav } from './components/bottomNav.ts';
+import { renderHomeView } from './views/homeView.ts';
 
-document.querySelector<HTMLDivElement>('#app')!.innerHTML = `
-<section id="center">
-  <div class="hero">
-    <img src="${heroImg}" class="base" width="170" height="179">
-    <img src="${typescriptLogo}" class="framework" alt="TypeScript logo"/>
-    <img src="${viteLogo}" class="vite" alt="Vite logo" />
-  </div>
-  <div>
-    <h1>Get started</h1>
-    <p>Edit <code>src/main.ts</code> and save to test <code>HMR</code></p>
-  </div>
-  <button id="counter" type="button" class="counter"></button>
-</section>
 
-<div class="ticks"></div>
+// The app's root element (the empty <div id="app"> in index.html)
+const app = document.querySelector<HTMLDivElement>('#app')!;
 
-<section id="next-steps">
-  <div id="docs">
-    <svg class="icon" role="presentation" aria-hidden="true"><use href="/icons.svg#documentation-icon"></use></svg>
-    <h2>Documentation</h2>
-    <p>Your questions, answered</p>
-    <ul>
-      <li>
-        <a href="https://vite.dev/" target="_blank">
-          <img class="logo" src="${viteLogo}" alt="" />
-          Explore Vite
-        </a>
-      </li>
-      <li>
-        <a href="https://www.typescriptlang.org" target="_blank">
-          <img class="button-icon" src="${typescriptLogo}" alt="">
-          Learn more
-        </a>
-      </li>
-    </ul>
-  </div>
-  <div id="social">
-    <svg class="icon" role="presentation" aria-hidden="true"><use href="/icons.svg#social-icon"></use></svg>
-    <h2>Connect with us</h2>
-    <p>Join the Vite community</p>
-    <ul>
-      <li><a href="https://github.com/vitejs/vite" target="_blank"><svg class="button-icon" role="presentation" aria-hidden="true"><use href="/icons.svg#github-icon"></use></svg>GitHub</a></li>
-      <li><a href="https://chat.vite.dev/" target="_blank"><svg class="button-icon" role="presentation" aria-hidden="true"><use href="/icons.svg#discord-icon"></use></svg>Discord</a></li>
-      <li><a href="https://x.com/vite_js" target="_blank"><svg class="button-icon" role="presentation" aria-hidden="true"><use href="/icons.svg#x-icon"></use></svg>X.com</a></li>
-      <li><a href="https://bsky.app/profile/vite.dev" target="_blank"><svg class="button-icon" role="presentation" aria-hidden="true"><use href="/icons.svg#bluesky-icon"></use></svg>Bluesky</a></li>
-    </ul>
-  </div>
-</section>
-
-<div class="ticks"></div>
-<section id="spacer"></section>
+// Build the shell once: header + nav + an empty content area (#content)
+app.innerHTML = `
+  ${renderHeader()}
+    <!-- Page content (extra bottom padding on mobile to clear the tab bar) -->
+    <main class="max-w-5xl mx-auto px-4 py-6 pb-24 md:pb-6">
+      <h2 id="page-title" class="text-lg font-semibold text-ink mb-4"></h2>
+      <div id="content"></div>
+      
+      </main>
+  ${renderBottomNav()}
 `
 
-setupCounter(document.querySelector<HTMLButtonElement>('#counter')!)
+// Grab the two spots we update on navigation: the title and the content box
+const content = document.querySelector<HTMLDivElement>("#content")!;
+const title = document.querySelector<HTMLHeadingElement>("#page-title")!;
+
+
+// Route table: maps each page name to its title + the function that draws it
+const routes = {
+  home: { title: "", render: renderHomeView },
+  alumni: { title: "Alumni Network", render: renderAlumniView },
+  jobs: { title: "Job Opportunities", render: renderJobView },
+  events: { title: "Events & Activities", render: renderEventView },
+  profile: { title: "", render: renderProfileView },
+  register: { title: "", render: renderRegisterView },
+}
+
+function navigate(route: keyof typeof routes) {
+  if (!routes[route]) return;
+  title.textContent = routes[route].title;
+
+  // Highlight the active button on BOTH desktop nav and mobile tabs
+  document.querySelectorAll<HTMLButtonElement>(".nav-link, .tab").forEach((b) => {
+    const active = b.dataset.route === route;   // the current page
+    b.classList.toggle("text-primary", active); // active = pink
+    b.classList.toggle("text-slate", !active);  // others = grey
+  });
+
+  routes[route].render(content);
+}
+
+document.addEventListener("click", (e) => {
+  const btn = (e.target as HTMLElement).closest<HTMLElement>("[data-route]");
+  if (!btn) return;
+  navigate(btn.dataset.route as keyof typeof routes);
+});
+
+navigate("home")
+
+window.addEventListener("navigate", (e) => {
+  navigate((e as CustomEvent<keyof typeof routes>).detail);
+});
