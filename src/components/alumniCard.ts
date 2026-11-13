@@ -1,6 +1,6 @@
 import type { Alumni } from "../types";
 
-// A single alumni profile card 
+// A single alumni profile card
 export function alumniCard(a: Alumni): string {
 
   // Pill-shaped skill chips
@@ -15,8 +15,7 @@ export function alumniCard(a: Alumni): string {
     </span>`;
 
   return `
-    <article class="bg-white  border border-border-light py-4 flex justify-center flex-col items-center   rounded-xl p-4   shadow-sm hover:shadow-md transition ">
-    
+    <article class="bg-white border border-border-light py-4 flex justify-center flex-col items-center rounded-xl p-4 shadow-sm hover:shadow-md transition">
       <div class="flex justify-between w-full">
         <div class="min-w-0 flex-1 flex flex-col gap-1.5">
             <h3 class="font-semibold text-ink text-base truncate">${a.name}</h3>
@@ -28,12 +27,10 @@ export function alumniCard(a: Alumni): string {
       </div>
       <div class="flex items-center justify-between gap-2 pt-2 w-full">
           ${availability}
-          <a href="" target="_blank" rel="noopener"
+          <a href="#"
          class="mt-auto text-sm font-medium text-primary border border-primary hover:bg-primary hover:text-white px-6 py-1.5 rounded-lg text-center transition-colors">
          Message
           </a>
-         
       </div>
-      
     </article>`;
 }
