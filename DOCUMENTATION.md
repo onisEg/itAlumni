@@ -56,7 +56,7 @@ The code is split by responsibility. Each layer has one job and does not know th
       │
 ┌─────┴───────────────────────────────────────┐
 │  services/ — fetch the data (Promise + delay)│
-│  getAlmni() · getJobs() · getEvents()        │
+│  getAlumni() · getJobs() · getEvents()       │
 └─────▲────────────────────────────────────────┘
       │
 ┌─────┴────────────────────────────────────────┐
@@ -75,7 +75,7 @@ What happens, step by step, when you open the **Networking** section and type "r
 
 1. **You click "Networking".** The button carries `data-route="alumni"`. A single click listener on the whole document catches it.
 2. **The router calls `navigate("alumni")`,** which calls the page's render function `renderAlumniView()`.
-3. **The view requests data** from `getAlmni()` and shows "Loading…" until it resolves (half a second).
+3. **The view requests data** from `getAlumni()` and shows "Loading…" until it resolves (half a second).
 4. **Data arrives** → the view builds the `filterBar` (search + dropdowns) and draws all the cards.
 5. **You type "react".** 300 ms after you stop typing (debounce), the view calls `filterAlumni`, which returns only the matches, and the cards are re-drawn.
 
@@ -125,7 +125,7 @@ export interface Alumni {
 A service returns a `Promise` that resolves after a short delay. We handle it with `async/await`, exactly as we would a real API — which is what lets us show a proper loading state.
 
 ```ts
-export function getAlmni(): Promise<Alumni[]> {
+export function getAlumni(): Promise<Alumni[]> {
   return new Promise((resolve) => {
     setTimeout(() => resolve(alumniData as Alumni[]), 500);
   });
@@ -222,7 +222,7 @@ export async function renderAlumniView(container: HTMLElement): Promise<void> {
 
   let alumniList: Alumni[];
   try {
-    alumniList = await getAlmni();
+    alumniList = await getAlumni();
   } catch {
     container.innerHTML = `<p>Something went wrong.</p>`;    // error
     return;
