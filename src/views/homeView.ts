@@ -24,7 +24,7 @@ export function renderHomeView(container: HTMLElement): void {
         <button class="bg-(image:--color-gradient) text-white font-semibold px-6 py-2.5 rounded-full">Join us</button>
         <button class="border border-primary text-primary font-semibold px-6 py-2.5 rounded-full hover:bg-primary hover:text-white transition">See what we do</button>
       </div>
-      <!-- Hero image + play overlay. Replace the src with your own image in public/ -->
+      <!-- Hero image + play overlay -->
       <div class="relative w-full max-w-3xl mt-4">
         <img src="${heroImg}" alt="Alumni community" class="w-full rounded-2xl object-cover" />        
         <button class="absolute inset-0 m-auto w-14 h-14 bg-white/90 rounded-full flex items-center justify-center text-ink shadow-lg" aria-label="Play video">
