@@ -6,10 +6,7 @@ Front-end only — it runs entirely on **mock JSON data** with no backend.
 
 ## Preview
 
-🔗 **Live demo:** <!-- paste your Vercel URL here --> `https://YOUR-APP.vercel.app`
-
-<!-- Add a screenshot of the home page: save it in the repo (e.g. public/preview.png) and uncomment the line below -->
-<!-- ![ITAlumni preview](./public/preview.png) -->
+🔗 **Live demo:** https://it-alumni-pink.vercel.app/
 
 ## Features
 
