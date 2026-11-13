@@ -4,7 +4,7 @@ import { icon } from "../utils/icon";
 const testimonials = (): string => {
     const stars = `<span class="text-star text-sm">★★★★★</span>`;
     const testimonials = [
-        { name: "Mikel", avatar: "https://i.pravatar.cc/80?img=12", quote: "rererThanks to ITAlumni I landed my dream job in tech through their mentoring program." },
+        { name: "Mikel", avatar: "https://i.pravatar.cc/80?img=12", quote: "Thanks to ITAlumni I landed my dream job in tech through their mentoring program." },
         { name: "Emma", avatar: "https://i.pravatar.cc/80?img=5", quote: "This community was key — it revolutionized my career and showed me new paths." },
         { name: "Laia", avatar: "https://i.pravatar.cc/80?img=9", quote: "ITAlumni gave me the tools and the confidence to start my own business." },
     ];
