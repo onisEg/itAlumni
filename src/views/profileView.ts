@@ -1,11 +1,7 @@
 
 export function renderProfileView(container: HTMLElement): void {
-    container.querySelector("#create-account")?.addEventListener("click", () => {
-        window.dispatchEvent(new CustomEvent("navigate", {
-            detail: "register"
-        }));
-    });
     const userData = localStorage.getItem("user");
+
     if (!userData) {
         container.innerHTML = `
             <section class="min-h-[80vh] flex flex-col items-center justify-center text-center px-4 py-12 gap-5">
@@ -23,7 +19,7 @@ export function renderProfileView(container: HTMLElement): void {
                     </p>
                 </div>
 
-                <button  data-route="register" class="bg-(image:--color-gradient) text-white font-semibold px-8 py-3 rounded-full">
+                <button data-route="register" class="bg-(image:--color-gradient) text-white font-semibold px-8 py-3 rounded-full">
                     Create an account
                 </button>
 
@@ -33,15 +29,5 @@ export function renderProfileView(container: HTMLElement): void {
                 </p>
 
             </section>`;
-
-       
-        container
-            .querySelector('[data-route="create-account"]')
-            ?.addEventListener("click", () => {
-                window.dispatchEvent(new CustomEvent("navigate", { detail: "register" }));
-            });
-        return;
     }
-
- 
 }
