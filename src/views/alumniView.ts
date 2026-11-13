@@ -9,17 +9,15 @@ import renderFilterBar from "../components/filterBar";
 export async function renderAlumniView(container: HTMLElement): Promise<void> {
 
     container.innerHTML = `<p class="text-center text-muted py-10">Loading alumni…</p>`;
-    //loading
+
     let alumniList: Alumni[];
     try {
         alumniList = await getAlumni();
     } catch {
-        //getting data fail
         container.innerHTML = `<p class="text-center text-red-600 py-10">Something went wrong. Please try again.</p>`;
         return;
     }
 
-    // 2) No Data
     if (alumniList.length === 0) {
         container.innerHTML = `<p class="text-center text-muted py-10">No alumni found.</p>`;
         return;
@@ -33,15 +31,12 @@ export async function renderAlumniView(container: HTMLElement): Promise<void> {
 
     const resultsContainer = container.querySelector<HTMLDivElement>("#alumni-results")!;
 
-    // when we get alumniList drow it 
     function drawResults(list: Alumni[]): void {
         resultsContainer.innerHTML = list.length
             ? list.map(alumniCard).join("")
             : `<p class="col-span-full text-center text-muted py-10">No alumni match your search.</p>`;
     }
 
-
-    // نربط الفلتر بار بالـ config الخاص بالـ alumni
     renderFilterBar(container.querySelector<HTMLElement>("#alumni-filterbar")!, {
         searchPlaceholder: "Search alumni...",
         filters: [
@@ -52,6 +47,5 @@ export async function renderAlumniView(container: HTMLElement): Promise<void> {
         onChange: (state) => drawResults(filterAlumni(alumniList, state)),
     });
 
-    //all Alumnus
     drawResults(alumniList);
 }
