@@ -27,12 +27,12 @@ function renderFilterBar(container: HTMLElement, options: FilterBarOptions) {
     </div>
   `;
 
-  // A function we call whenever something changes → it notifies the view
+  // Notify the view with a copy of the current filter state
   function notifyChange(): void {
     options.onChange({ ...currentState });
   }
 
-  // Search text
+  // Debounce: filter once the user pauses typing (300ms), not on every keystroke
   const searchInput = container.querySelector<HTMLInputElement>("input");
   let debounceTimer: number;
   searchInput?.addEventListener("input", () => {
@@ -43,8 +43,6 @@ function renderFilterBar(container: HTMLElement, options: FilterBarOptions) {
     }, 300);
   });
 
-
-  //dropdowns
   const dropdowns = container.querySelectorAll<HTMLSelectElement>("[data-filter-key]");
   dropdowns.forEach((dropdown) => {
     dropdown.addEventListener("change", () => {
