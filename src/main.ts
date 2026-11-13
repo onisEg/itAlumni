@@ -10,10 +10,9 @@ import { renderBottomNav } from './components/bottomNav.ts';
 import { renderHomeView } from './views/homeView.ts';
 
 
-// The app's root element (the empty <div id="app"> in index.html)
 const app = document.querySelector<HTMLDivElement>('#app')!;
 
-// Build the shell once: header + nav + an empty content area (#content)
+// Build the shell once (header + content area + mobile nav)
 app.innerHTML = `
   ${renderHeader()}
     <!-- Page content (extra bottom padding on mobile to clear the tab bar) -->
@@ -25,7 +24,6 @@ app.innerHTML = `
   ${renderBottomNav()}
 `
 
-// Grab the two spots we update on navigation: the title and the content box
 const content = document.querySelector<HTMLDivElement>("#content")!;
 const title = document.querySelector<HTMLHeadingElement>("#page-title")!;
 
@@ -44,16 +42,17 @@ function navigate(route: keyof typeof routes) {
   if (!routes[route]) return;
   title.textContent = routes[route].title;
 
-  // Highlight the active button on BOTH desktop nav and mobile tabs
+  // Highlight the active button on both desktop nav and mobile tabs
   document.querySelectorAll<HTMLButtonElement>(".nav-link, .tab").forEach((b) => {
-    const active = b.dataset.route === route;   // the current page
-    b.classList.toggle("text-primary", active); // active = pink
-    b.classList.toggle("text-slate", !active);  // others = grey
+    const active = b.dataset.route === route;
+    b.classList.toggle("text-primary", active);
+    b.classList.toggle("text-slate", !active);
   });
 
   routes[route].render(content);
 }
 
+// One listener handles every [data-route] element, even ones injected later
 document.addEventListener("click", (e) => {
   const btn = (e.target as HTMLElement).closest<HTMLElement>("[data-route]");
   if (!btn) return;
